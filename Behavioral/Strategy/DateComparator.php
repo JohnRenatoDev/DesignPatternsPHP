@@ -15,10 +15,10 @@ class DateComparator implements ComparatorInterface
         $aDate = new \DateTime($a['date']);
         $bDate = new \DateTime($b['date']);
 
-        if ($aDate == $bDate) {
-            return 0;
-        } else {
+        if ($aDate != $bDate) {
             return $aDate < $bDate ? -1 : 1;
+        } else {
+            return 0;
         }
     }
 }
